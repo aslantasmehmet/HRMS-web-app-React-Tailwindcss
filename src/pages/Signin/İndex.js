@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
-// import validationSchema from "../Auth/validation";
+import validationSchema from "../Auth/validation";
 import { fetchRegister } from "../../service/CandidateService";
 import {  useToasts } from 'react-toast-notifications';
 
@@ -16,7 +16,7 @@ export default function İndex() {
       email: "",
       password: "",
     },
-    //validationSchema,
+    validationSchema,
     onSubmit: async (values, bag) => {
       const {success} = await fetchRegister(values);
       if(success==false) {
