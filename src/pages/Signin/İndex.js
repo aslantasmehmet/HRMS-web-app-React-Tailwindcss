@@ -1,10 +1,10 @@
 import React from "react";
 import { useFormik } from "formik";
 import validationSchema from "../Auth/validation";
-import { fetchRegister } from "../service/CandidateService";
+import { fetchRegister } from "../../service/CandidateService";
 import {  useToasts } from 'react-toast-notifications';
 
-export default function SignUp() {
+export default function İndex() {
 
   const { addToast } = useToasts();
 
@@ -16,7 +16,7 @@ export default function SignUp() {
       email: "",
       password: "",
     },
-    validationSchema,
+    //validationSchema,
     onSubmit: async (values, bag) => {
       const {success} = await fetchRegister(values);
       if(success==false) {
