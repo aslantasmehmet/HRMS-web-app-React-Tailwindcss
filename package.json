@@ -15,7 +15,8 @@
     "react-toast-notification": "^1.1.4",
     "react-toast-notifications": "^2.5.1",
     "react-toastify": "^9.0.8",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
