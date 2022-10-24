@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import React from "react";
 import { RiFacebookBoxFill } from "react-icons/ri";
-import { fetchLogin } from "../service/CandidateService";
+// import { fetchLogin } from "../service/CandidateService";
 
 export default function Login() {
   const formik = useFormik({
@@ -10,10 +10,10 @@ export default function Login() {
       password: "",
     },
 
-    onsubmit: async (values) => {
-      const { success } = await fetchLogin(values);
-      console.log(success);
-    },
+    // onsubmit: async (values) => {
+    //   const { success } = await fetchLogin(values);
+    //   console.log(success);
+    // },
   });
 
   return (
