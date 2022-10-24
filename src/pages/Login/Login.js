@@ -18,9 +18,9 @@ export default function Login() {
 
   return (
     <div className="w-full h-96 mb-64  bg-[url('https://aday-spage.mncdn.com/Knet_img_cizim.eb8015c.svg?v=p1006152329491')]">
-      <div className="container mx-auto">
+      <div className="container mx-auto ml-96">
         {" "}
-        <div class="card w-96  bg-base-100 shadow-xl ml-96 mt-6  ">
+        <div class="card w-96  bg-base-100 shadow-xl ml-32  mt-6  ">
           <form onSubmit={formik.handleSubmit}>
             <div class="card-body">
               <h5>Aday Üye Girişi</h5>
