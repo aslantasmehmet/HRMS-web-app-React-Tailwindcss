@@ -1,19 +1,36 @@
 import { useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { RiFacebookBoxFill } from "react-icons/ri";
 // import { fetchLogin } from "../service/CandidateService";
+import * as Yup from "yup"
 
 export default function Login() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(true)
+  
+
+  function handleSignOut(params) {
+    setIsAuthenticated(false)
+  }
+
+    function handleSignedIn(params) {
+    setIsAuthenticated(true)
+  }
+
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
+      password: ""
     },
+    validationSchema:Yup.object({
+      email:Yup.string().email("Geçerli E-posta adresi giriniz!").required("E-posta Adresi girilmesi zorunludur."),
+      password:Yup.string().required("Parola girilmesi zorunludur."),
 
-    // onsubmit: async (values) => {
-    //   const { success } = await fetchLogin(values);
-    //   console.log(success);
-    // },
+    }),
+
+    onSubmit: (values) => {
+      console.log(values);
+    },
   });
 
   return (
@@ -33,10 +50,12 @@ export default function Login() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.email}
+                  placeholder="Kullanıcı Adı veya E-posta"
                 />
-                <span className="absolute top-0 left-0 h-full px-4 flex items-center text-sm text-gray-500 tansition-all peer-focus:h-7 peer-focus:text-primary-brand-color peer-focus:text-xs peer-valid:h-7 peer-valid:text-primary-brand-color peer-valid:text-xs">
-                  Kullanıcı Adı ve E-posta
-                </span>
+                {
+                  formik.touched.email && formik.errors.email
+                  ? <div className="error_msg">{formik.errors.email}</div> : null
+                }
               </label>
 
               <label className="mr-2 flex-1 relative block" htmlFor="password">
@@ -47,10 +66,12 @@ export default function Login() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.password}
+                  placeholder="Parola"
                 />
-                <span className="absolute top-0 left-0 h-full px-4 flex items-center text-sm text-gray-500 tansition-all peer-focus:h-7 peer-focus:text-primary-brand-color peer-focus:text-xs peer-valid:h-7 peer-valid:text-primary-brand-color peer-valid:text-xs">
-                  Şifre
-                </span>
+                 {
+                  formik.touched.password && formik.errors.password
+                  ? <div className="error_msg">{formik.errors.password}</div> : null
+                }
               </label>
             </div>
 

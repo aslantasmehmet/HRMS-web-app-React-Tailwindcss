@@ -2,7 +2,7 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-export default function Header() {
+export default function Header({}) {
   return (
     <div className="bg-white ">
       <div className="h-16 container mx-auto  ">
