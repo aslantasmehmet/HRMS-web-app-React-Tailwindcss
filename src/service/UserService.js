@@ -8,6 +8,6 @@ export default class UserService {
     }
 
     login(user){
-        return axios.post("http://localhost:8050/api/users/login", user)
+        return axios.post("http://localhost:8050/api/users/login",user)
     }
 }
