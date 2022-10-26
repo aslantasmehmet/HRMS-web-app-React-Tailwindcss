@@ -1,35 +1,56 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
 import { RiFacebookBoxFill } from "react-icons/ri";
-// import { fetchLogin } from "../service/CandidateService";
-import * as Yup from "yup"
+import * as Yup from "yup";
+import UserService from "../../service/UserService";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../store/actions/authActions";
+import swal from "sweetalert";
 
 export default function Login() {
+  const navigate   = useNavigate ();
 
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
-  
+  const dispatch = useDispatch();
 
-  function handleSignOut(params) {
-    setIsAuthenticated(false)
-  }
+  const handleLogin = (user) => {
+    dispatch(userLogin(user));
+  };
 
-    function handleSignedIn(params) {
-    setIsAuthenticated(true)
-  }
+  let userService = new UserService();
+
+  const userLoginSchema = Yup.object().shape({
+    email: Yup.string()
+      .required("E-mail cannot be empty!")
+      .email("Geçerli bir email adresi giriniz."),
+    password: Yup.string().required("Paralo girilmesi zorunludur."),
+  });
 
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: ""
+      password: "",
     },
-    validationSchema:Yup.object({
-      email:Yup.string().email("Geçerli E-posta adresi giriniz!").required("E-posta Adresi girilmesi zorunludur."),
-      password:Yup.string().required("Parola girilmesi zorunludur."),
-
-    }),
-
+    validationSchema: userLoginSchema,
     onSubmit: (values) => {
-      console.log(values);
+      userService.login(values).then((result) => {
+        if (result.data.success == true) {
+          handleLogin(result.data.data);
+          navigate("/");
+          swal({
+            title: "Succeed!",
+            text: result.data.message,
+            icon: "success",
+            button: "Ok",
+          });
+        } else {
+          swal({
+            title: "Login is Unsuccessful!",
+            text: result.data.message,
+            icon: "error",
+            button: "Ok",
+          });
+        }
+      });
     },
   });
 
@@ -52,10 +73,9 @@ export default function Login() {
                   value={formik.values.email}
                   placeholder="Kullanıcı Adı veya E-posta"
                 />
-                {
-                  formik.touched.email && formik.errors.email
-                  ? <div className="error_msg">{formik.errors.email}</div> : null
-                }
+                {formik.touched.email && formik.errors.email ? (
+                  <div className="error_msg">{formik.errors.email}</div>
+                ) : null}
               </label>
 
               <label className="mr-2 flex-1 relative block" htmlFor="password">
@@ -68,10 +88,9 @@ export default function Login() {
                   value={formik.values.password}
                   placeholder="Parola"
                 />
-                 {
-                  formik.touched.password && formik.errors.password
-                  ? <div className="error_msg">{formik.errors.password}</div> : null
-                }
+                {formik.touched.password && formik.errors.password ? (
+                  <div className="error_msg">{formik.errors.password}</div>
+                ) : null}
               </label>
             </div>
 
