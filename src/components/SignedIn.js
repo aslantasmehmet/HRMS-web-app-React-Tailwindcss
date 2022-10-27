@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Dropdown, Menu, Icon, Image, DropdownMenu } from "semantic-ui-react";
 import { userLogout } from "../store/actions/authActions";
 
@@ -23,9 +23,11 @@ export default function SignedIn() {
             />
             <Dropdown pointing="top right" text={authItem[0].user.name}>
                 <Dropdown.Menu>
-                    <Dropdown.Item>
+
+                    {authItem[0].user.userType === 1 &&( 
+                    <Dropdown.Item as={Link} to="/aday/profile">
                         Profile
-                    </Dropdown.Item>
+                    </Dropdown.Item>)}
                     <Dropdown.Item>
                         Özgeçmiş Güncelle
                     </Dropdown.Item>
