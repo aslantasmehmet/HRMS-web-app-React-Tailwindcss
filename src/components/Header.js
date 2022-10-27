@@ -1,18 +1,26 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import SignedIn from "./SignedIn";
+import SignedOut from "./SignedOut";
 
-import { NavLink } from "react-router-dom";
+export default function Header() {
+  
+  const { authItem } = useSelector((state) => state.auth);
+ 
 
-export default function Header({}) {
+ 
   return (
     <div className="bg-white ">
       <div className="h-16 container mx-auto  ">
         <div className="flex justify-between">
           <div className="flex justify-start">
-            <div>
-              <img
-                className="pt-3.5 pr-8 cursor-pointer"
-                src="https://aday-spage.mncdn.com/Knet_img_KnetLogo.ae2b40d.svg?v=p0930095816756"
-              />
+            <div >
+              <a href="http://localhost:3000/">
+                <img
+                  className="pt-3.5 pr-8 cursor-pointer"
+                  src="https://aday-spage.mncdn.com/Knet_img_KnetLogo.ae2b40d.svg?v=p0930095816756"
+                />
+              </a>
             </div>
 
             <div className="pr-8 pt-3.5 font-semibold text-lg hover:text-purple-700  cursor-pointer ">
@@ -26,19 +34,9 @@ export default function Header({}) {
             <div className="pt-3.5 font-semibold text-lg">Kariyer Rehberi</div>
           </div>
           <div className="pl-56 pt-3.5 flex justify-end ">
-            <button className="mr-4 h-10 w-32 border-2 border-cyan-200 font-semibold  bg-neutral-50 rounded text-cyan-300 hover:bg-cyan-300 hover:text-white">
-              İlan Paketi Al
-            </button>{" "}
-            <NavLink to={"/aday/giris"}>
-              <button className=" bg-purple-700 hover:bg-purple-800 border rounded-lg h-10 w-32 text-white font-semibold">
-                Giriş Yap
-              </button>
-            </NavLink>
-            <NavLink to={"/aday/uyeol"}>
-              <button className=" bg-purple-700 hover:bg-purple-800 border rounded-lg h-10 w-32 text-white font-semibold">
-                Üye Ol
-              </button>
-            </NavLink>
+            <>
+            {authItem[0] .loggedIn? <SignedIn/>:<SignedOut/>}
+            </>
           </div>
         </div>
       </div>
