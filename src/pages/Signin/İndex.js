@@ -1,6 +1,5 @@
 import React from "react";
 import { useFormik } from "formik";
-import validationSchema from "../../auth/validation";
 import { fetchRegister } from "../../service/CandidateService";
 import { useToasts } from "react-toast-notifications";
 import * as Yup from "yup";
