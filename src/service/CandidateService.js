@@ -9,7 +9,7 @@ export const fetchRegister =async(input) => {
 };
 
 export default class CandidateService{
-    getByCandidateId(id){
+    getByIdentityNumber(id){
         return axios.get("http://localhost:8050/api/candidates/getByIdentityNumber?identityNumber="+id)
     }
 }

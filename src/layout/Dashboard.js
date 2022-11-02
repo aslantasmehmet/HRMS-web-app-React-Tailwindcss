@@ -3,7 +3,7 @@ import HomePage from "./HomePage";
 import LoginPage from "./LoginPage"
 import İndex from "../pages/Signin/İndex"
 import { Route, Routes } from "react-router-dom";
-import CandidateProfile from "../pages/Profile/CandidateProfile"
+import ProfilePage from "./ProfilePage";
 
 export default function Dashboard() {
   return (
@@ -13,7 +13,7 @@ export default function Dashboard() {
         <Route exact path="/anasayfa" element={<HomePage />} />
         <Route exact path="/aday/giris" element={<LoginPage />} />
         <Route exact path="/aday/uyeol" element={<İndex />} />
-        <Route exact path="/aday/profile" element={<CandidateProfile />} />
+        <Route exact path="/aday/profile" element={<ProfilePage />} />
       </Routes>
     </div>
   );
