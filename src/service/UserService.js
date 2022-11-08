@@ -10,4 +10,8 @@ export default class UserService {
     login(user){
         return axios.post("http://localhost:8050/api/users/login",user)
     }
+
+    getById(id){
+        return axios.get("http://localhost:8050/api/users/getById?id="+id)
+    }
 }
