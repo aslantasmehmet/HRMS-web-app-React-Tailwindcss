@@ -1,14 +1,23 @@
 import axios from "axios";
 
+export default class ResumeService {
+  getById(id) {
+    return axios.get("http://localhost:8050/api/resumes/getById?id=" + id);
+  }
 
-export default class ResumeService{
+  getResumeDetailsByCandidateId(candidateId) {
+    return axios.get("http://localhost:8050/api/resumes/getResumeDetailsByCandidateId?candidateId="+candidateId);
+  }
 
-    getbyid(id){
-        return axios.get("http://localhost:8050/api/resume/getbyid?id="+id)
+  
+    getAllResumesDetailsByActivatedCandidate() {
+        return axios.get("http://localhost:8050/api/resumes/getAllResumesDetailsByActivatedCandidate");
     }
 
-    getByCandidateId(candidateId) {
-        return axios.get(`http://localhost:8050/api/resume/getByCandidateId?candidateId=${candidateId}`);
-    }  
+     
+        getAllByCandidateId(id) {
+        return axios.get("http://localhost:8050/api/coverLetters/getAllByCandidateId?candidateId="+id);
+    }
 
+ 
 }
