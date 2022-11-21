@@ -55,12 +55,12 @@ export default function Login() {
   });
   return (
     <div className="w-full h-96 mb-64  bg-[url('https://aday-spage.mncdn.com/Knet_img_cizim.eb8015c.svg?v=p1006152329491')]">
-      <div className="container mx-auto ml-96">
+      <div className="container">
         {" "}
-        <div class="card w-96  bg-base-100 shadow-lg rounded-lg ml-64  mt-10 border ">
+        <div class="card w-96  bg-base-100 shadow-lg rounded-lg ml-96  mt-12 border ">
           <form onSubmit={formik.handleSubmit}>
             <div class="card-body">
-              <h5 className="text-2xl flex justify-start">Aday Üye Girişi</h5>
+              <h5 className="text-2xl flex justify-start mb-4">Aday Üye Girişi</h5>
 
               <label className="mr-2 flex-1 relative block" htmlFor="email">
                 <input
