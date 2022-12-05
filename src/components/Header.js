@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import SignedIn from "./SignedIn";
 import SignedOut from "./SignedOut";
 
@@ -23,9 +24,9 @@ export default function Header() {
               </a>
             </div>
 
-            <div className="pr-8 pt-3.5 font-semibold text-lg hover:text-purple-700  cursor-pointer ">
+            <NavLink to={"/jobs/search"} className="pr-8 pt-3.5 font-semibold text-lg hover:text-purple-700 ">
               İş Ara
-            </div>
+            </NavLink>
 
             <div className="pr-8 pt-3.5 font-semibold text-lg">
               Kariyer Planlaması
