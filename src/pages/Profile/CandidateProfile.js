@@ -5,6 +5,10 @@ import ResumeService from "../../service/ResumeService";
 import { HiMail } from "react-icons/hi";
 import { BsPlusCircle } from "react-icons/bs";
 import { Segment } from "semantic-ui-react";
+import AddSummaryInformation from "../Profile/AddSummaryInformation"
+import AddWorkExperience from "../Profile/AddWorkExperience"
+import AddLanguageInformation from "../Profile/AddLanguageInformation"
+import AddSkillInformation from "../Profile/AddSkillInformation"
 import {
   Card,
   Avatar,
@@ -17,6 +21,7 @@ import {
   StackDivider,
   Image,
 } from "@chakra-ui/react";
+import AddEducationInformation from "./AddEducationInformation";
 
 export default function CandidateProfile() {
 
@@ -107,15 +112,17 @@ export default function CandidateProfile() {
                     <Heading ml="8" size="md" mr="8" pt="2">
                       ÖZET BİLGİ
                     </Heading>
-                    <button className="border border-gray-300 hover:border-gray-600 hover:bg-gray-100  shadow rounded-full border-black ">
-                      {" "}
+                    <label className="cursor-pointer border border-gray-300 hover:border-gray-600 hover:bg-gray-100  shadow rounded-full border-black  ">
+                    
                       <div className="flex flex-row ">
                         <BsPlusCircle className="mt-2 ml-2 text-gray-500 " />
                         <p className="py-1 px-1 mr-2 text-base text-gray-500 font-semibold  ">
-                          Özet bilgi güncelle
-                        </p>
-                      </div>
-                    </button>
+                          <AddSummaryInformation/>
+                        </p></div>
+                        
+                        
+                      
+                    </label>
                   </div>
                   <div className="divider " />
                 </CardHeader>
@@ -144,7 +151,7 @@ export default function CandidateProfile() {
                       <div className="flex flex-row">
                         <BsPlusCircle className="mt-2 ml-2 text-gray-500" />
                         <p className="py-1 px-1 mr-2 text-base text-gray-500 font-semibold">
-                          Yeni eğitim bilgisi ekle
+                         <AddEducationInformation/>
                         </p>
                       </div>
                     </button>
@@ -225,7 +232,7 @@ export default function CandidateProfile() {
                       <div className="flex flex-row">
                         <BsPlusCircle className="mt-2 ml-2 text-gray-500" />
                         <p className="py-1 px-1 mr-2 text-base text-gray-500 font-semibold">
-                          Yeni iş deneyimi ekle
+                        <AddWorkExperience/>
                         </p>
                       </div>
                     </button>
@@ -307,7 +314,7 @@ export default function CandidateProfile() {
                       <div className="flex flex-row">
                         <BsPlusCircle className="mt-2 ml-2 text-gray-500" />
                         <p className="py-1 px-1 mr-2 text-base text-gray-500 font-semibold">
-                          Yabancı dil Bilgisi Ekle
+                          <AddLanguageInformation/>
                         </p>
                       </div>
                     </button>
@@ -366,7 +373,7 @@ export default function CandidateProfile() {
                       <div className="flex flex-row">
                         <BsPlusCircle className="mt-2 ml-2 text-gray-500" />
                         <p className="py-1 px-1 mr-2 text-base text-gray-500 font-semibold">
-                          Yeni yetenek bilgisi ekle
+                          <AddSkillInformation/>
                         </p>
                       </div>
                     </button>

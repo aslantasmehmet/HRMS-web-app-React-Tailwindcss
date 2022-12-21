@@ -18,6 +18,11 @@ export default function SignedOut() {
           Üye Ol
         </button>
       </NavLink>
+      <NavLink to={"/isveren/giris"}>
+        <button className="ml-4  hover:bg-purple-800 hover:text-white border-2 border-purple-700 rounded-lg h-10 w-32 text-purple-700 font-semibold">
+          İşveren Girişi
+        </button>
+      </NavLink>
     </div>
   );
 }

@@ -34,10 +34,12 @@ export default function Header() {
 
             <div className="pt-3.5 font-semibold text-lg">Kariyer Rehberi</div>
           </div>
-          <div className="pl-56 pt-3.5 flex justify-end ">
+          <div className="pl-44 pt-3.5 flex justify-end ">
             <>
             {authItem[0] .loggedIn? <SignedIn/>:<SignedOut/>}
             </>
+          </div>
+          <div>
           </div>
         </div>
       </div>
