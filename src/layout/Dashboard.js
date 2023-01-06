@@ -6,6 +6,9 @@ import { Route, Routes } from "react-router-dom";
 import JobSearch from "../pages/JobSearch/JobSearch";
 import ProfilePage from "./ProfilePage";
 import JobDetail from "../pages/JobSearch/JobDetail";
+import EmployerLoginPage from "../pages/Login/EmployerLoginPage";
+import EmployerRegistration from "../pages/Signin/EmployerRegistration";
+import EmployerLoginHeader from "../components/EmployerLoginHeader";
 
 export default function Dashboard() {
   return (
@@ -18,6 +21,11 @@ export default function Dashboard() {
         <Route exact path="/aday/profile" element={<ProfilePage />} />
         <Route exact path="/jobs/search" element={<JobSearch/>}/>
         <Route  path="/ilan/:campanyName" element={<JobDetail/>}/>
+        <Route  path="/isveren/giris" element={<EmployerLoginPage/>}/>
+        <Route  path="/isveren/kayıt" element={<EmployerRegistration/>}/>
+        <Route  path="/isveren" element={<EmployerLoginHeader/>}/>
+        
+        
       </Routes>
     </div>
   );

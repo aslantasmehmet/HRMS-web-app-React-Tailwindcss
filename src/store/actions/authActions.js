@@ -7,7 +7,6 @@ export function userLogin(user) {
     payload: user,
   };
 }
-
 export function userLogout(user){
     return{
         type : USER_LOGOUT,
