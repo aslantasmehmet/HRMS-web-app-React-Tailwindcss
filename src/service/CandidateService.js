@@ -1,20 +1,28 @@
-import axios from "axios"
+import axios from "axios";
 
-
-export const fetchRegister =async(input) => {
-    const {data} = await axios.post("http://localhost:8050/api/candidates/add",
+export const fetchRegister = async (input) => {
+  const { data } = await axios.post(
+    "http://localhost:8050/api/candidates/add",
     input
-    );
-    return data;
+  );
+  return data;
 };
 
-export default class CandidateService{
-    getByIdentityNumber(identityNumber){
-        return axios.get("http://localhost:8050/api/candidates/getByIdentityNumber?identityNumber="+identityNumber)
-    }
+export default class CandidateService {
+  getByIdentityNumber(identityNumber) {
+    return axios.get(
+      "http://localhost:8050/api/candidates/getByIdentityNumber?identityNumber=" +
+        identityNumber
+    );
+  }
 
-    getByEmail(email){
-        return axios.get("http://localhost:8050/api/candidates/getById?email="+email)
-    }
+  getByEmail(email) {
+    return axios.get(
+      "http://localhost:8050/api/candidates/getById?email=" + email
+    );
+  }
+
+  login(candidate) {
+    return axios.post("http://localhost:8050/api/employers/login", candidate);
+  }
 }
-

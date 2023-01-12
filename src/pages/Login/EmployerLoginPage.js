@@ -35,19 +35,19 @@ export default function EmployerLoginPage() {
       employerService.login(values).then((result) => {
         if (result.data.success == true) {
           handleLogin(result.data.data);
-          navigate("/");
+          navigate("/isveren");
           swal({
-            title: "Succeed!",
-            text: result.data.message,
+            title: "Giriş Başarılı!",
+            text: "Hoşgeldiniz",
             icon: "success",
-            button: "Ok",
+            button: "Kapat",
           });
         } else {
           swal({
-            title: "Login is Unsuccessful!",
-            text: result.data.message,
+            title: "Giriş Başarısız!",
+            text: "Lütfen bilgilerinizi kontrol edip tekrar deneyiniz",
             icon: "error",
-            button: "Ok",
+            button: "Tamam",
           });
         }
       });
@@ -67,7 +67,7 @@ export default function EmployerLoginPage() {
             </div>
           </div>
           <form onSubmit={formik.handleSubmit}>
-            <div className="card w-96 h-full my-20 rounded-lg ">
+            <div className="card w-96 h-full my-20 rounded-full ">
               <div className="flex flex-col">
                 <div className="flex justify-center mt-6 text-2xl font-semibold">
                   İşveren Girişi

@@ -37,108 +37,143 @@ export default function Login() {
           handleLogin(result.data.data);
           navigate("/");
           swal({
-            title: "Succeed!",
-            text: result.data.message,
+            title: "Giriş Başarılı",
+            text: "Hoş Geldiniz",
             icon: "success",
-            button: "Ok",
+            button: "Tamam",
           });
         } else {
           swal({
-            title: "Login is Unsuccessful!",
-            text: result.data.message,
+            title: "Giriş Başarısız",
+            text: "Lütfen bilgilerinizi kontrol edip tekrar deneyiniz!",
             icon: "error",
-            button: "Ok",
+            button: "Tamam",
           });
         }
       });
     },
   });
   return (
-    <div className="w-full h-96 mb-64  bg-[url('https://aday-spage.mncdn.com/Knet_img_cizim.eb8015c.svg?v=p1006152329491')]">
-      <div className="container">
-        {" "}
-        <div class="card w-96  bg-base-100 shadow-lg rounded-lg ml-96  mt-12 border ">
-          <form onSubmit={formik.handleSubmit}>
-            <div class="card-body">
-              <h5 className="text-2xl flex justify-start mb-4">Aday Üye Girişi</h5>
-
-              <label className="mr-2 flex-1 relative block" htmlFor="email">
-                <input
-                  className="mb-2 h-14 px-4 border-2 border-gray-200 rounded w-full transition-colors hover:border-primary-brand-color outline-none peer text-sm pt-2 "
-                  id="email"
-                  type="email"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.email}
-                  placeholder="Kullanıcı Adı veya E-posta"
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <div className="error_msg text-rose-500 text-sm flex justify-start">
-                    {formik.errors.email}
-                  </div>
-                ) : null}
-              </label>
-
-              <label className="mr-2 flex-1 relative block" htmlFor="password">
-                <input
-                  className="mb-2 h-14 px-4 border-2 border-gray-200 rounded w-full transition-colors hover:border-primary-brand-color outline-none peer text-sm pt-2 "
-                  id="password"
-                  type="password"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.password}
-                  placeholder="Parola"
-                />
-                {formik.touched.password && formik.errors.password ? (
-                  <div className="error_msg text-rose-500 text-sm flex justify-start">
-                    {formik.errors.password}
-                  </div>
-                ) : null}
-              </label>
-            </div>
-
-            <div className="flex justify-between ">
-              <div className="flex justify-start ml-6">
-                <Checkbox />
-                <p className="text-purple-600 ml-2">Beni Hatırla</p>
-              </div>
-
-              <div className="mr-6 text-purple-700">
-                <p>Şifremi Unuttum</p>
+    //Header
+    <div>
+      <div className="bg-white ">
+        <div className="h-16 container mx-auto  ">
+          <div className="flex justify-between">
+            <div className="flex justify-start">
+              <div>
+                <a href="/">
+                <img
+                  className="pt-3.5 pr-8 cursor-pointer"
+                  src="https://aday-spage.mncdn.com/Knet_img_KnetLogo.ae2b40d.svg?v=p0930095816756"
+                /></a>
               </div>
             </div>
-
-            <div className="flex justify-center ">
-              <button
-                className="mt-6 border bg-purple-700 h-12 text-white font-semibold mb-4 rounded w-80 hover:bg-purple-800"
-                type="submit"
-              >
-                Giriş Yap
-              </button>
+            <div className="pl-96 pt-3.5 flex justify-end ">
+              <button className="mr-4 h-10 w-32 border-2 border-cyan-200 font-semibold  bg-neutral-50 rounded text-cyan-300 hover:bg-cyan-300 hover:text-white">
+                İlan Paketi Al
+              </button>{" "}
+              <NavLink to={"/aday/uyeol"}>
+                <button className=" bg-purple-700 hover:bg-purple-800 border rounded-lg h-10 w-32 text-white font-semibold">
+                  Üye Ol
+                </button>
+              </NavLink>
             </div>
-
-            <div className="divider container mb-4"> veya</div>
-
-            <div className="flex justify-center">
-              <button className="border border-blue-500  h-12 w-80 text-primary font-semibold rounded hover:bg-blue-500 mb-4  ">
-                {" "}
-                <div className="flex justify-center mt-2 text-blue-500 hover:text-white ">
-                  <RiFacebookBoxFill size={20} /> <p>Facebook ile Giriş Yap</p>
-                </div>
-              </button>
-            </div>
-          </form>
-          <div className="flex justify-center mt-4">
-            <p className=" text-bg-gray-100">
-              Kariyer.net’te özgeçmişin yok mu?
-            </p>
           </div>
-          <div className="flex justify-center mt-1">
-            <NavLink to={"/aday/uyeol"}>
-              <button className=" mb-4 text-purple-600 font-base">
-                Hemen Üye Ol
-              </button>
-            </NavLink>{" "}
+        </div>
+      </div>
+      {/* CandidateLogin */}
+      <div className="w-full h-96 mb-64 ml-24 bg-[url('https://aday-spage.mncdn.com/Knet_img_cizim.eb8015c.svg?v=p1006152329491')]">
+        <div className="container">
+          {" "}
+          <div class="card w-96  bg-base-100 shadow-lg rounded-lg ml-96  mt-12 border ">
+            <form onSubmit={formik.handleSubmit}>
+              <div class="card-body">
+                <h5 className="text-2xl flex justify-start mb-4">
+                  Aday Üye Girişi
+                </h5>
+
+                <label className="mr-2 flex-1 relative block" htmlFor="email">
+                  <input
+                    className="mb-2 h-14 px-4 border-2 border-gray-200 rounded w-full transition-colors hover:border-primary-brand-color outline-none peer text-sm pt-2 "
+                    id="email"
+                    type="email"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                    placeholder="Kullanıcı Adı veya E-posta"
+                  />
+                  {formik.touched.email && formik.errors.email ? (
+                    <div className="error_msg text-rose-500 text-sm flex justify-start">
+                      {formik.errors.email}
+                    </div>
+                  ) : null}
+                </label>
+
+                <label
+                  className="mr-2 flex-1 relative block"
+                  htmlFor="password"
+                >
+                  <input
+                    className="mb-2 h-14 px-4 border-2 border-gray-200 rounded w-full transition-colors hover:border-primary-brand-color outline-none peer text-sm pt-2 "
+                    id="password"
+                    type="password"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.password}
+                    placeholder="Parola"
+                  />
+                  {formik.touched.password && formik.errors.password ? (
+                    <div className="error_msg text-rose-500 text-sm flex justify-start">
+                      {formik.errors.password}
+                    </div>
+                  ) : null}
+                </label>
+              </div>
+
+              <div className="flex justify-between ">
+                <div className="flex justify-start ml-6">
+                  <Checkbox />
+                  <p className="text-purple-600 ml-2">Beni Hatırla</p>
+                </div>
+
+                <div className="mr-6 text-purple-700">
+                  <p>Şifremi Unuttum</p>
+                </div>
+              </div>
+
+              <div className="flex justify-center ">
+                <button
+                  className="mt-6 border bg-purple-700 h-12 text-white font-semibold mb-4 rounded w-80 hover:bg-purple-800"
+                  type="submit"
+                >
+                  Giriş Yap
+                </button>
+              </div>
+
+              <div className="divider container mb-4"> veya</div>
+
+              <div className="flex justify-center">
+                <button className="border border-blue-500  h-12 w-80 text-primary font-semibold rounded hover:bg-blue-500 mb-4  ">
+                  {" "}
+                  <div className="flex justify-center mt-2 text-blue-500 hover:text-white ">
+                    <RiFacebookBoxFill size={20} />{" "}
+                    <p>Facebook ile Giriş Yap</p>
+                  </div>
+                </button>
+              </div>
+            </form>
+            <div className="flex justify-center mt-4">
+              <p className=" text-bg-gray-100">
+                Kariyer.net’te özgeçmişin yok mu?
+              </p>
+            </div>
+            <div className="flex justify-center mt-1">
+              <NavLink to={"/aday/uyeol"}>
+                <button className=" mb-4 text-purple-600 font-base">
+                  Hemen Üye Ol
+                </button>
+              </NavLink>{" "}
+            </div>
           </div>
         </div>
       </div>
