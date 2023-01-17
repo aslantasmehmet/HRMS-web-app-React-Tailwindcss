@@ -13,6 +13,5 @@
 => İŞVEREN KAYIT
 ![alt text](https://res.cloudinary.com/dd4d48hwn/image/upload/v1672984268/isveren_kay%C4%B1t_ojgcpo.png)
 
-![](https://res.cloudinary.com/dd4d48hwn/image/upload/v1673949311/chrome-capture-2023-0-11_f2vnmk.gif)
 
-
+<img src="https://cloudinary.com/console/c-c3db65055c2a5185b0642462ea77d3/media_library/folders/home/asset/05211aba0452999cddba6a84b7c58bad/manage?context=manage">
