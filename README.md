@@ -13,6 +13,6 @@
 => İŞVEREN KAYIT
 ![alt text](https://res.cloudinary.com/dd4d48hwn/image/upload/v1672984268/isveren_kay%C4%B1t_ojgcpo.png)
 
-![alt text](https://res.cloudinary.com/dd4d48hwn/image/upload/v1673949311/chrome-capture-2023-0-11_f2vnmk.gif)
+![](https://res.cloudinary.com/dd4d48hwn/image/upload/v1673949311/chrome-capture-2023-0-11_f2vnmk.gif)
 
-<img alt="gif" src="https://res.cloudinary.com/dd4d48hwn/image/upload/v1673949311/chrome-capture-2023-0-11_f2vnmk.gif" width="auto">
+
