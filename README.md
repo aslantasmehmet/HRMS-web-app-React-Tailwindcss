@@ -14,4 +14,4 @@
 ![alt text](https://res.cloudinary.com/dd4d48hwn/image/upload/v1672984268/isveren_kay%C4%B1t_ojgcpo.png)
 
 
-![https://res.cloudinary.com/dd4d48hwn/image/upload/v1673949311/chrome-capture-2023-0-11_f2vnmk.gif]
+![chrome-capture-2023-0-11](https://user-images.githubusercontent.com/92733161/212877975-2e986184-e1b7-4244-b803-fa9063fd77c1.gif)
